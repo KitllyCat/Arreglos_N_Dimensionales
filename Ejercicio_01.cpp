@@ -20,40 +20,41 @@ void multiplicarMatrices(int A[][3], int B[][3], int C[][3]) {
     }
 }
 
-void mostrarMatriz(int mat[][3]) {
+void mostrarMatrices(int A[][3], int B[][3], int C[][3]) {
+    cout << "Matriz A:\tMatriz B:\tResultado:" << endl;
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
-            cout << mat[i][j] << " ";
+            cout << A[i][j] << "  ";
+        }
+        cout << "\t";
+        for (int j = 0; j < 3; ++j) {
+            cout << B[i][j] << "  ";
+        }
+        cout << "\t";
+        for (int j = 0; j < 3; ++j) {
+            cout << C[i][j] << "  ";
         }
         cout << endl;
     }
 }
 
 int main() {
-	
     int matrizA[3][3] = {
-	{2, 3, 4},
-	{8, 10, 8},
-	{14, 16, 18}
-	};
+        {2, 3, 4},
+        {8, 10, 8},
+        {14, 16, 18}
+    };
 
     int matrizB[3][3] = {
-	{18, 16, 14},
-	{12, 10, 8}, 
-	{6, 4, 2}
-	};
+        {18, 16, 14},
+        {12, 10, 8}, 
+        {6, 4, 2}
+    };
     
     int resultado[3][3];
     multiplicarMatrices(matrizA, matrizB, resultado);
 
-    cout << "Matriz A:" << endl;
-    mostrarMatriz(matrizA);
-	cout << endl;
-    cout << "Matriz B:" << endl;
-    mostrarMatriz(matrizB);
-	cout << endl;
-    cout << "Resultado:" << endl;
-    mostrarMatriz(resultado);
+    mostrarMatrices(matrizA, matrizB, resultado);
 
     return 0;
 }
